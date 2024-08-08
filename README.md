@@ -1,6 +1,6 @@
-# Magento 2 OneStepCheckout Module
+# Magento 2 One Step Checkout Extension
 
-Enhance your Magento 2 store with a streamlined checkout process using our Magento 2 OneStepCheckout Module. Simplify the checkout experience for your customers with a single-page checkout that consolidates all steps into one, improving conversion rates and customer satisfaction.
+Enhance your Magento 2 store with a streamlined checkout process using our Magento 2 One Step Checkout Module. Simplify the checkout experience for your customers with a single-page checkout that consolidates all steps into one, improving conversion rates and customer satisfaction.
 
 ## Key Features:
 
@@ -14,7 +14,6 @@ Allow customers to quickly complete their purchase with minimal clicks, reducing
 Optimized for all devices, ensuring a seamless experience on desktop, tablet, and mobile.
 - **Enhanced User Experience:**
 Streamlined checkout process reduces friction and increases conversion rates.
-
 
 ## Benefits:
 
