@@ -1,0 +1,52 @@
+<?php
+/**
+ * Mavenbird Technologies Private Limited
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://mavenbird.com/Mavenbird-Module-License.txt
+ *
+ * =================================================================
+ *
+ * @category   Mavenbird
+ * @package    Mavenbird_Sorting
+ * @author     Mavenbird Team
+ * @copyright  Copyright (c) 2018-2024 Mavenbird Technologies Private Limited ( http://mavenbird.com )
+ * @license    http://mavenbird.com/Mavenbird-Module-License.txt
+ */
+?>
+
+<?php if ($block->getMdOscDeliveryDate()): ?>
+<div class="block block-order-details-view">
+    <div class="block-title">
+        <strong>Delivery Information</strong>
+    </div>
+    <div class="block-content">
+        <div class="box-order-delivery-information">
+            <div class="box-content">
+                <?php if ($block->getMdOscDeliveryDate()): ?>
+                    <div id="delivery-date">
+                        <strong><?= __('Delivery Date: ') ?></strong>
+                        <span class="price"><?= $block->getMdOscDeliveryDate() ?></span>
+                    </div>
+                <?php endif; ?>
+                <?php if ($block->getMdOscDeliveryTime()): ?>
+                    <div id="delivery-time">
+                        <strong><?= __('Delivery Time: ') ?></strong>
+                        <span class="price"><?= $block->getMdOscDeliveryTime() ?></span>
+                    </div>
+                <?php endif; ?>
+                <?php if ($block->getMdOscDeliveryComment()): ?>
+                    <div id="delivery-comment">
+                        <strong><?= __('Delivery Comment: ') ?>:</strong>
+                        <span class="price"><?= $block->getMdOscDeliveryComment() ?></span>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif; ?>

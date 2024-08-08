@@ -1,0 +1,86 @@
+ <!--
+ * Mavenbird Technologies Private Limited
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://mavenbird.com/Mavenbird-Module-License.txt
+ *
+ * =================================================================
+ *
+ * @category   Mavenbird
+ * @package    Mavenbird_OneStepCheckout
+ * @author     Mavenbird Team
+ * @copyright  Copyright (c) 2018-2024 Mavenbird Technologies Private Limited ( http://mavenbird.com )
+ * @license    http://mavenbird.com/Mavenbird-Module-License.txt
+-->
+ 
+<!-- ko foreach: getRegion('authentication') -->
+<!-- ko template: getTemplate() --><!-- /ko -->
+<!--/ko-->
+
+<!-- ko foreach: getRegion('messages') -->
+<!-- ko template: getTemplate() --><!-- /ko -->
+<!--/ko-->
+
+<div class="md-osc two-columns-osc" data-bind="css:{virtualCheckout:isVirtual()},afterRender:afterRender">
+    <div class="md-osc-new-layout">
+        <!-- ko if: isVirtual() -->
+        <div class="checkout-column-osc">
+            <!-- ko if: getBlock(0) -->
+            <div class="checkout-column-block">
+                <!-- ko with: getBlock(0) -->
+                <!-- ko template: getTemplate() --><!-- /ko -->
+                <!--/ko-->
+            </div>
+            <!--/ko-->
+        </div>
+        <div class="checkout-column-osc">
+            <!-- ko if: getBlock(1) -->
+            <div class="checkout-column-block">
+                <!-- ko with: getBlock(1) -->
+                <!-- ko template: getTemplate() --><!-- /ko -->
+                <!--/ko-->
+            </div>
+            <!--/ko-->
+        </div>
+        <!-- /ko -->
+        <!-- ko ifnot: isVirtual() -->
+        <div class="checkout-column-osc">
+            <!-- ko if: getBlock(0) -->
+            <div class="checkout-column-block">
+                <!-- ko with: getBlock(0) -->
+                <!-- ko template: getTemplate() --><!-- /ko -->
+                <!--/ko-->
+            </div>
+            <!--/ko-->
+            <!-- ko if: getBlock(1) -->
+            <div class="checkout-column-block">
+                <!-- ko with: getBlock(1) -->
+                <!-- ko template: getTemplate() --><!-- /ko -->
+                <!--/ko-->
+            </div>
+            <!--/ko-->
+            <!-- ko if: getBlock(2) -->
+            <div class="checkout-column-block">
+                <!-- ko with: getBlock(2) -->
+                <!-- ko template: getTemplate() --><!-- /ko -->
+                <!--/ko-->
+            </div>
+            <!--/ko-->
+        </div>
+        <div class="checkout-column-osc">
+            <!-- ko if: getBlock(3) -->
+            <div class="checkout-column-block">
+                <!-- ko with: getBlock(3) -->
+                <!-- ko template: getTemplate() --><!-- /ko -->
+                <!--/ko-->
+            </div>
+            <!--/ko-->
+        </div>
+        <!-- /ko -->
+    </div>
+</div>
+

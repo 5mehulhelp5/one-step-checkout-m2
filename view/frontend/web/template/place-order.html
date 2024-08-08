@@ -1,0 +1,27 @@
+ <!--
+ * Mavenbird Technologies Private Limited
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://mavenbird.com/Mavenbird-Module-License.txt
+ *
+ * =================================================================
+ *
+ * @category   Mavenbird
+ * @package    Mavenbird_OneStepCheckout
+ * @author     Mavenbird Team
+ * @copyright  Copyright (c) 2018-2024 Mavenbird Technologies Private Limited ( http://mavenbird.com )
+ * @license    http://mavenbird.com/Mavenbird-Module-License.txt
+-->
+ 
+<div class="button-set clearfix button-onestepcheckout">
+    <div class="clear"></div>
+    <button id="onestepcheckout-button-place-order" type="button"
+            class="btn-proceed-checkout onestepcheckout-btn-checkout onestepcheckout-place"
+            data-bind="attr:{title:$t('Place Order')},click:prepareToPlaceOrder,enable:isCheckoutEnable,fadeVisible: isBtnVisible">
+        <span><span class="title" data-bind="i18n:'Place order now'"></span></span>
+    </button>
+</div>

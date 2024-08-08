@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="quote">
+        <column xsi:type="date" name="md_osc_delivery_date" nullable="false" comment="Delivery Date"/>
+        <column xsi:type="text" name="md_osc_delivery_time" nullable="false" comment="Delivery Time"/>
+        <column xsi:type="text" name="md_osc_delivery_comment" nullable="false" comment="Delivery Comment"/>
+        <column xsi:type="text" name="mdosc_extra_fee_checked" nullable="false" comment="Extra Fee Checked"/>
+        <column xsi:type="decimal" name="mdosc_extra_fee" nullable="true" scale="4" precision="12" default="0.0000" comment="Extra Fee"/>
+        <column xsi:type="decimal" name="base_mdosc_extra_fee" nullable="true" scale="4" precision="12" default="0.0000" comment="Base Extra Fee"/>
+        <column xsi:type="text" name="mdosc_registration_token" comment="Registration Token For the Guest User"/>
+    </table>
+    <table name="sales_order">
+        <column xsi:type="date" name="md_osc_delivery_date" nullable="false" comment="Delivery Date"/>
+        <column xsi:type="text" name="md_osc_delivery_time" nullable="false" comment="Delivery Time"/>
+        <column xsi:type="text" name="md_osc_delivery_comment" nullable="false" comment="Delivery Comment"/>
+        <column xsi:type="decimal" name="mdosc_extra_fee" nullable="true" scale="4" precision="12" default="0.0000" comment="Extra Fee"/>
+        <column xsi:type="decimal" name="base_mdosc_extra_fee" nullable="true" scale="4" precision="12" default="0.0000" comment="Base Extra Fee"/>
+    </table>
+    <table name="sales_invoice">
+        <column xsi:type="decimal" name="mdosc_extra_fee" nullable="true" scale="4" precision="12" default="0.0000" comment="Extra Fee"/>
+        <column xsi:type="decimal" name="base_mdosc_extra_fee" nullable="true" scale="4" precision="12" default="0.0000" comment="Base Extra Fee"/>
+    </table>
+    <table name="sales_creditmemo">
+        <column xsi:type="decimal" name="mdosc_extra_fee" nullable="true" scale="4" precision="12" default="0.0000" comment="Extra Fee"/>
+        <column xsi:type="decimal" name="base_mdosc_extra_fee" nullable="true" scale="4" precision="12" default="0.0000" comment="Base Extra Fee"/>
+    </table>
+</schema>

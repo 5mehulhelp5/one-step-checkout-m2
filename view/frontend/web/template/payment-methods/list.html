@@ -1,0 +1,41 @@
+ <!--
+ * Mavenbird Technologies Private Limited
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://mavenbird.com/Mavenbird-Module-License.txt
+ *
+ * =================================================================
+ *
+ * @category   Mavenbird
+ * @package    Mavenbird_OneStepCheckout
+ * @author     Mavenbird Team
+ * @copyright  Copyright (c) 2018-2024 Mavenbird Technologies Private Limited ( http://mavenbird.com )
+ * @license    http://mavenbird.com/Mavenbird-Module-License.txt
+-->
+ 
+<div if="isPaymentMethodsAvailable()"
+     class="items payment-methods">
+    <div data-bind="css: 'step-title step_'+getSequence(), i18n: getPaymentListTitle()" data-role="title"></div>
+    <div repeat="foreach: paymentGroupsList, item: '$group'"
+         class="payment-group">
+        <div if="getRegion($group().displayArea)().length"
+             translate="getGroupTitle($group)"
+             data-role="title"
+             data-bind="css: 'hide'">
+        </div>
+        <!-- ko if: (canDisplayWallet($group)) -->
+        <!-- ko foreach: getRegion('mavenbird-use-wallet') -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+        <!--/ko-->
+        <each args="data: getRegion($group().displayArea), as: 'method'" render=""/>
+    </div>
+</div>
+<div ifnot="isPaymentMethodsAvailable()"
+     class="no-payments-block"
+     translate="'No Payment Methods'">
+</div>

@@ -1,0 +1,35 @@
+ <!--
+ * Mavenbird Technologies Private Limited
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://mavenbird.com/Mavenbird-Module-License.txt
+ *
+ * =================================================================
+ *
+ * @category   Mavenbird
+ * @package    Mavenbird_OneStepCheckout
+ * @author     Mavenbird Team
+ * @copyright  Copyright (c) 2018-2024 Mavenbird Technologies Private Limited ( http://mavenbird.com )
+ * @license    http://mavenbird.com/Mavenbird-Module-License.txt
+-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Mavenbird\OneStepCheckout\Block\Checkout\CmsBlock" name="top.cms_block" before="-">
+                <action method="setArea">
+                    <argument name="area" xsi:type="string">header</argument>
+                </action>
+            </block>
+            <block class="Mavenbird\OneStepCheckout\Block\Checkout\CmsBlock" name="bottom.cms_block" after="-">
+                <action method="setArea">
+                    <argument name="area" xsi:type="string">footer</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

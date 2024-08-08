@@ -1,0 +1,57 @@
+<?php
+/**
+ * Mavenbird Technologies Private Limited
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://mavenbird.com/Mavenbird-Module-License.txt
+ *
+ * =================================================================
+ *
+ * @category   Mavenbird
+ * @package    Mavenbird_Sorting
+ * @author     Mavenbird Team
+ * @copyright  Copyright (c) 2018-2024 Mavenbird Technologies Private Limited ( http://mavenbird.com )
+ * @license    http://mavenbird.com/Mavenbird-Module-License.txt
+ */
+?>
+
+<?php if ($block->getMdOscDeliveryDate()): ?>
+<section class="admin__page-section" id="delivery-date-content">
+    <div class="admin__page-section-title">
+        <span class="title"><?= $block->escapeHtml(__('Delivery Information')) ?></span>
+    </div>
+    <div class="admin__page-section-content">
+        <?php if ($block->getMdOscDeliveryDate()): ?>
+            <div id="delivery-date">
+                <strong><?= __('Delivery Date') ?></strong>
+                <span><?= $block->getMdOscDeliveryDate() ?></span>
+            </div>
+        <?php endif; ?>
+        <?php if ($block->getMdOscDeliveryTime()): ?>
+            <div id="delivery-time">
+                <strong><?= __('Delivery Time') ?></strong>
+                <span><?= $block->getMdOscDeliveryTime() ?></span>
+            </div>
+        <?php endif; ?>
+        <?php if ($block->getMdOscDeliveryComment()): ?>
+            <div id="delivery-comment">
+                <strong><?= __('Comment') ?>:</strong>
+                <br/>
+                <?= $block->getMdOscDeliveryComment() ?>
+            </div>
+        <?php endif; ?>
+    </div>
+</section>
+<script type="text/javascript">
+    require(
+        ['jquery'],
+        function($) {
+            $('#delivery-date-content').insertAfter($('.order-view-billing-shipping'));
+        }
+    );
+</script>
+<?php endif; ?>

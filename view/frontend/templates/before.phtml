@@ -1,0 +1,39 @@
+<?php
+/**
+ * Mavenbird Technologies Private Limited
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://mavenbird.com/Mavenbird-Module-License.txt
+ *
+ * =================================================================
+ *
+ * @category   Mavenbird
+ * @package    Mavenbird_Sorting
+ * @author     Mavenbird Team
+ * @copyright  Copyright (c) 2018-2024 Mavenbird Technologies Private Limited ( http://mavenbird.com )
+ * @license    http://mavenbird.com/Mavenbird-Module-License.txt
+ */
+?>
+
+<?php
+$helper = $this->helper('Mavenbird\OneStepCheckout\Helper\Data');
+$isRedirectEnable = $helper->allowRedirectCheckoutAfterProductAddToCart();
+?>
+<script>
+    require([
+        'jquery',
+        'mage/url'
+    ], function($, url) {
+        $(document).on('ajax:addToCart', function() {
+            var enableRedirect = '<?php echo $isRedirectEnable; ?>';
+            if(enableRedirect==1) {
+                var redirecturl = url.build('checkout');
+                window.location.href = redirecturl;
+            }
+        });
+    })
+</script>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+ <!--
+ * Mavenbird Technologies Private Limited
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://mavenbird.com/Mavenbird-Module-License.txt
+ *
+ * =================================================================
+ *
+ * @category   Mavenbird
+ * @package    Mavenbird_OneStepCheckout
+ * @author     Mavenbird Team
+ * @copyright  Copyright (c) 2018-2024 Mavenbird Technologies Private Limited ( http://mavenbird.com )
+ * @license    http://mavenbird.com/Mavenbird-Module-License.txt
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Mavenbird_Base::md_modules"
+             title="Mavenbird Modules"
+             module="Mavenbird_Base"
+             sortOrder="50"
+             resource="Mavenbird_Base::root" />
+             
+        <add id="Mavenbird_OneStepCheckout::onestepcheckout_root"
+             title="One Step Checkout"
+             module="Mavenbird_OneStepCheckout"
+             sortOrder="50"
+             parent="Mavenbird_Base::md_modules"
+             resource="Mavenbird_OneStepCheckout::root" />
+
+        <add id="Mavenbird_OneStepCheckout::config_root"
+             title="Configuration"
+             module="Mavenbird_OneStepCheckout"
+             sortOrder="600"
+             action="adminhtml/system_config/edit/section/onestepcheckout"
+             parent="Mavenbird_OneStepCheckout::onestepcheckout_root"
+             resource="Mavenbird_OneStepCheckout::config_root" />
+
+        <add id="Mavenbird_OneStepCheckout::useful_links"
+             title="Useful Links"
+             module="Mavenbird_OneStepCheckout"
+             sortOrder="999"
+             parent="Mavenbird_OneStepCheckout::onestepcheckout_root"
+             resource="Mavenbird_OneStepCheckout::root" />
+
+        <add id="Mavenbird_OneStepCheckout::documentation"
+             title="Documentation"
+             module="Mavenbird_OneStepCheckout"
+             sortOrder="10"
+             target="_blank"
+             parent="Mavenbird_OneStepCheckout::useful_links"
+             resource="Mavenbird_OneStepCheckout::root" />
+    </menu>
+</config>
